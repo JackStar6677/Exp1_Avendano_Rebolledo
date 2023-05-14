@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Cero</title>
+    <LInk rel="stylesheet" href="css/style.css">
+    <LInk rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <LInk rel="icon" href="imagenes/icono.png">
+    <style>
+      body {
+        background-color: bisque;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li>
+        <img src="imagenes/logofinal.png" alt="" style="height: 90;">
+      </li>
+      <li>
+        <a class="nav-item active" href="login.html">Cerrar Sesión</a>
+      </li>
+      <LI class="nav-item">
+        <a class="nav-item active" href="index.html"> Inicio</a>
+      </LI>
+      <LI class="nav-item">
+        <a class="nav-item active" href="pagina2.html"> Sobre Nosotros</a>
+      </LI>
+      <LI class="nav-item">
+        <A class="nav-item active" href="pagina3.html" > Galería</A>
+      </LI>
+      <li>
+        <a class="nav-item active" href="Api.html">Lo que ofrecemos</a>
+      </li>
+      <li>
+        <a class="nav-item inactive" style="width: 500;" href="">‎ </a>
+        <!--Poner required en todo el formulario, y un maxleght de 10 mas o menos-->
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+  <style>
+    /* Estilos para el contenedor de las imágenes */
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+      justify-items: center;
+      padding: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenedor de las imágenes -->
+  <div class="image-container"></div>
+
+  <!-- Enlace a la API de Unsplash -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // Llama a la API de Unsplash para obtener imágenes de comida y bebida
+    axios.get('https://api.unsplash.com/search/photos', {
+      params: {
+        query: 'food',
+        per_page: 20,
+        client_id: 'g6MUsUJiHz1gkwG8smuLOjBe5BzcxEvluqSuPg_R3G4'
+      }
+    })
+    .then(function(response) {
+      // Crea elementos img y los agrega al contenedor de imágenes
+      var images = response.data.results;
+      var container = document.querySelector('.image-container');
+
+      images.forEach(function(image) {
+        var img = document.createElement('img');
+        img.src = image.urls.regular;
+        img.alt = image.alt_description;
+        container.appendChild(img);
+      });
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  </script>
+</body>
+</html>
+
+</div>
+<nav>
+  <ul style="padding: 10;">
+<footer>
+<div>
+        <div>
+          <a href="https://www.facebook.com">
+            <img style="width: 30px;" src="imagenes/Facebook_Logo_(2019).png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com">
+            <img style="width: 30px;" src="imagenes/Instagram_logo_2022.svg.png" alt="Instagram">
+          </a>
+          <a href="https://www.twitter.com">
+            <img style="width: 30px;" src="imagenes/3938028.png" alt="Twitter">
+          </a>
+        </div>
+</footer>
+    <div>
+      <p style="color: bisque;">@ Derechos Reservados</p>
+    </div>
+  </div>
+  </ul>
+  </nav>
