@@ -35,22 +35,26 @@
 </script> -->
 
 <div class="container">
-    <h1>Iniciar sesión</h1>
     <form id="login-form">
       <label for="Nombres">Nombres:</label><br>
-      <input type="text" name="Nombres" id="Nombres" maxlength="10" required><br>
+      <input type="text" name="Nombres" id="Nombres" maxlength="25" required><br>
       <hr>
       <label for="ApellidoPA">Apellido Paterno:</label><br>
-      <input type="text" name="ApellidoPA" id="apaterno" required><br>
+      <input type="text" name="ApellidoPA" id="apaterno" maxlength="25" required><br>
       <hr>
       <label for="ApellidoMa">Apellido Materno:</label><br>
-      <input type="text" name="ApellidoMa" id="amaterno" required><br>
+      <input type="text" name="ApellidoMa" id="amaterno" maxlength="25" required><br>
       <hr>
-      <label for="Genero">Género:</label><br>
-      <input type="text" name="Genero" id="gender" required><br>
+      <label for="Genero">Género:</label><br> 
+      <select name="" id="">
+        <option value="">Seleccione una opcion</option>
+        <option value="M">Hombre</option>
+        <option value="F">Mujer</option>
+        <option value="O">Otro</option>
+      </select>
       <hr>
-      <label for="rut">Rut:</label><br>
-      <input type="text" name="rut" id="rut" maxlength="12" pattern="[0-9]{1,2,3,4,5,6,7,8}[0-9Kk.]" required><br>
+      <label for="rut">Rut (Sin puntos ni guión):</label><br>
+      <input type="text" name="rut" id="rut" minlength="8" maxlength="12" pattern="[0-9]{1,2,3,4,5,6,7,8}[0-9Kk]" required><br>
       <hr>
       <label for="Direccion">Dirección:</label><br>
       <input type="text" name="Direccion" id="Direccion" required><br>
