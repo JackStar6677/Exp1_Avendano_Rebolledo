@@ -25,9 +25,7 @@
       <li>
         <img src="imagenes/logofinal.png" alt="" style="height: 90;">
       </li>
-      <li>
-        <a class="nav-item active" href="login.html">Cerrar Sesión</a>
-      </li>
+      
       <LI class="nav-item">
         <a class="nav-item active" href="index.html"> Inicio</a>
       </LI>
@@ -38,17 +36,17 @@
         <A class="nav-item active" href="pagina3.html" > Galería</A>
       </LI>
       <li>
-        <a class="nav-item active" href="Api.html">Lo que ofrecemos</a>
+        <a class="nav-item active" href="Api.html">Café</a>
       </li>
       <li>
-        <a class="nav-item inactive" style="width: 500;" href="">‎ </a>
-        <!--Poner required en todo el formulario, y un maxleght de 10 mas o menos-->
+        <a class="nav-item active" href="login.html">Cerrar Sesión</a>
       </li>
+      
     </ul>
   </div>
 </div>
 </nav>
-
+  <h1 style="text-align: center;">También tenemos un pequeño café en el que ofrecemos desayunos y café</h1>
   <style>
     /* Estilos para el contenedor de las imágenes */
     .image-container {
@@ -77,8 +75,8 @@
     // Llama a la API de Unsplash para obtener imágenes de comida y bebida
     axios.get('https://api.unsplash.com/search/photos', {
       params: {
-        query: 'food',
-        per_page: 20,
+        query: 'cafe breakfast',
+        per_page: 4,
         client_id: 'g6MUsUJiHz1gkwG8smuLOjBe5BzcxEvluqSuPg_R3G4'
       }
     })
@@ -97,6 +95,31 @@
     .catch(function(error) {
       console.log(error);
     });
+    
+    axios.get('https://api.unsplash.com/search/photos', {
+      params: {
+        query: 'coffee',
+        per_page: 4,
+        client_id: 'g6MUsUJiHz1gkwG8smuLOjBe5BzcxEvluqSuPg_R3G4'
+      }
+    })
+    .then(function(response) {
+      // Crea elementos img y los agrega al contenedor de imágenes
+      var images = response.data.results;
+      var container = document.querySelector('.image-container');
+
+      images.forEach(function(image) {
+        var img = document.createElement('img');
+        img.src = image.urls.regular;
+        img.alt = image.alt_description;
+        container.appendChild(img);
+      });
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+    
   </script>
 </body>
 </html>
