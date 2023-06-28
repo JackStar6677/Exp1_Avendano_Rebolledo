@@ -1,13 +1,15 @@
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Cero</title>
-    <LInk rel="stylesheet" href="css/style.css">
-    <LInk rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/bootstrap.js"></script>
-    <LInk rel="icon" href="imagenes/icono.png">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link rel="icon" href="{% static 'imagenes/icono.png' %}">
     <style>
       body {
         background-color: bisque;
@@ -24,22 +26,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li>
-            <img src="imagenes/logofinal.png" alt="" style="height: 90;">
+            <img src="{% static 'imagenes/logofinal.png' %}" alt="" style="height: 90;">
           </li>
-          <LI class="nav-item">
-            <a class="nav-item active" href="index.html"> Inicio</a>
-          </LI>
-          <LI class="nav-item">
-            <a class="nav-item active" href="pagina2.html"> Sobre Nosotros</a>
-          </LI>
-          <LI class="nav-item">
-            <A class="nav-item active" href="pagina3.html" > Galería</A>
-          </LI>
-          <li>
-            <a class="nav-item active" href="Api.html">Café</a>
+          <li class="nav-item">
+            <a class="nav-item active" href="{% url 'index' %}"> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item active" href="{% url 'pagina2' %}"> Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item active" href="{% url 'pagina3' %}" > Galería</a>
           </li>
           <li>
-            <a class="nav-item active" href="login.html">Cerrar sesión</a>
+            <a class="nav-item active" href="{% url 'Api' %}">Café</a>
+          </li>
+          <li>
+            <a class="nav-item active" href=logout>Cerrar sesión</a>
           </li>
         </ul>
       </div>
@@ -47,23 +49,23 @@
   </nav>
   
     
-    <div id="carouselExample" class="carousel sLIde">
+    <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="imagenes/elhombreydios.png" class="d-block w-100" alt="..." >
+            <img src="{% static 'imagenes/elhombreydios.png' %}" class="d-block w-100" alt="..." >
           </div>
           <div class="carousel-item">
-            <img src="imagenes/eltiempo.png" class="d-block w-100" alt="...">
+            <img src="{% static 'imagenes/eltiempo.png' %}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="imagenes/parque.png" class="d-block w-100" alt="...">
+            <img src="{% static 'imagenes/parque.png' %}" class="d-block w-100" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-sLIde="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-sLIde="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -75,15 +77,15 @@
         <br>
 
           <div class="grideses">
-            <div style="width: 1300;"><img src="imagenes/galeria1.jpg"></div>
-            <div style="width: 1400;"><img src="imagenes/Untitled.jpg"></div>
+            <div style="width: 1300;"><img src="{% static 'imagenes/galeria1.jpg' %}"></div>
+            <div style="width: 1400;"><img src="{% static 'imagenes/Untitled.jpg' %}"></div>
           </div>
           
       <hr>
       <p style="margin-bottom: 100;">
         Nuestras obras de arte están diseñadas para sorprender y cautivar al espectador. Cada pieza está 
         creada con una pasión y dedicación inquebrantables, y refleja nuestra filosofía de que el arte debe 
-        ser una fuente de emoción y provocación. Desde pinturas abstractas hasta esculturas surreaLIstas, 
+        ser una fuente de emoción y provocación. Desde pinturas abstractas hasta esculturas surrealistas, 
         nuestra selección de obras de arte es variada y emocionante, y estamos seguros de que encontrarás algo 
         que te haga sentir algo especial.</p>
         <br>
@@ -94,13 +96,13 @@
       <div>
               <div>
                 <a href="https://www.facebook.com">
-                  <img style="width: 30px;" src="imagenes/Facebook_Logo_(2019).png" alt="Facebook">
+                  <img style="width: 30px;" src="{% static 'imagenes/Facebook_Logo_(2019).png' %}" alt="Facebook">
                 </a>
                 <a href="https://www.instagram.com">
-                  <img style="width: 30px;" src="imagenes/Instagram_logo_2022.svg.png" alt="Instagram">
+                  <img style="width: 30px;" src="{% static 'imagenes/Instagram_logo_2022.svg.png' %}" alt="Instagram">
                 </a>
                 <a href="https://www.twitter.com">
-                  <img style="width: 30px;" src="imagenes/3938028.png" alt="Twitter">
+                  <img style="width: 30px;" src="{% static 'imagenes/3938028.png' %}" alt="Twitter">
                 </a>
               </div>
       </footer>

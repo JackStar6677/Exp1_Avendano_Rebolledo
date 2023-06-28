@@ -1,131 +1,191 @@
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Cero</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/bootstrap.js"></script>
-    <link rel="icon" href="imagenes/icono.png">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link rel="icon" href="{% static 'imagenes/icono.png' %}">
     <style>
         body {
           background-color: bisque;
         }
-      </style>
+    </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li>
-        <img src="imagenes/logofinal.png" alt="" style="height: 90;">
-      </li>
-      <LI class="nav-item">
-        <a class="nav-item active" href="index.html"> Inicio</a>
-      </LI>
-      <LI class="nav-item">
-        <a class="nav-item active" href="pagina2.html"> Sobre Nosotros</a>
-      </LI>
-      <LI class="nav-item">
-        <A class="nav-item active" href="pagina3.html" > Galería</A>
-      </LI>
-      <li>
-        <a class="nav-item active" href="Api.html"> Café </a>
-      </li>
-      <li>
-        <a class="nav-item active" href="login.html">Cerrar sesión</a>
-      </li>
-    </ul>
-  </div>
-</div>
-</nav>
-    <h1>Imágenes y descripciones</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li>
+            <img src="{% static 'imagenes/logofinal.png' %}" alt="" style="height: 90px;">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'pagina2' %}">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'pagina3' %}">Galería</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'Api' %}">Café</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'login' %}">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Imágenes y descripciones</h1>
+
   <div class="grid-container">
     <div class="grid-item">
-      <img src="imagenes/tercera pagina/abstract.png" alt="Imagen ejemplo">
-      <p>Esta obra de arte abstracta es una pieza fascinante y compleja que desafía la percepción del espectador. <br>
+      <img src="{% static 'imagenes/tercera pagina/abstract.png' %}" alt="Imagen ejemplo">
+      <p>Esta obra de arte abstracta es una pieza fascinante y compleja que desafía la percepción del espectador.<br>
          La composición está dominada por líneas y formas geométricas abstractas, en una amplia gama de tonos vibrantes y contrastantes.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/escul.png" alt="Imagen ejemplo">
-      <p>La Estatua del Pensador es notable por su fuerza emocional y su habilidad para capturar <br>
-         la profundidad de la introspección y el pensamiento. <br>
-         La postura del hombre sugiere una tensión interna y un conflicto interno, mientras que <br>
-          su expresión facial sugiere una intensa concentración y reflexión.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/escultura.png" alt="Imagen ejemplo">
-      <p>Las estatuas representan la cabeza del legendario rey David de la antigua Grecia, <br>
-         y cada una ha sido tallada con un nivel de detalle asombroso. Cada rasgo facial, desde los ojos hasta <br>
-          los labios, ha sido cuidadosamente tallado para representar la perfección de la forma humana.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/forma.png" alt="Imagen ejemplo">
-      <p>Esta obra de arte es una interpretación única y abstracta de una pareja que baila tango. <br>
-         En lugar de representar a los bailarines con líneas <br>
-         y formas convencionales, el artista ha creado la imagen utilizando solo triángulos <br>
-          y formas similares, lo que le da a la pieza un aspecto geométrico y estilizado.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/galeria.png" alt="Imagen ejemplo">
-      <p>En esta galeria de arte, se estan exponiendo nuestras obras</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/hilo.png" alt="Imagen ejemplo">
-      <p>Esta mandala es una obra de arte fascinante y única, creada con hilos de distintos colores que <br> se
-         entrelazan en un patrón intrincado y bellamente diseñado. Cada hilo se ha seleccionado <br>
-          cuidadosamente para acentuar y complementar el color del hilo vecino, creando una imagen armoniosa y equilibrada.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/lana.png" alt="Imagen ejemplo">
-      <p>Esta obra de arte es una impresionante interpretación de una cabeza de caballo hecha con lana, que muestra una <br>
-         habilidad impresionante en la manipulación y el manejo de este material. <br>
-          Cada hebra de lana se ha tejido y trenzado cuidadosamente para crear una imagen de la cabeza de un caballo.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/mandala.png" alt="Imagen ejemplo">
-      <p>Esta mandala es una verdadera celebración del color y la forma. Los patrones y diseños intrincados se extienden <br>
-         desde el centro de la pieza, creando una sensación de movimiento y fluidez que lleva al ojo en un viaje emocionante y dinámico.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/thelastsupper.png" alt="Imagen ejemplo">
-      <p>La pintura muestra a los doce discípulos de Jesús sentados alrededor de una larga mesa, mientras que Jesús se encuentra en el centro, con los brazos abiertos. <br>
-         Los personajes están representados en un estilo realista y detallado, y cada uno tiene <br>
-          una expresión facial y un gesto que sugiere su personalidad y su papel en la historia.</p>
-    </div>
-    <div class="grid-item">
-      <img src="imagenes/tercera pagina/ojo.png" alt="Imagen ejemplo">
-      <p>Esta obra de arte es una impresionante representación de un ojo en tonos pastel, que se destaca por <br>
-         su textura única y distintiva. Aunque la obra no es muy detallada, su <br>
-          simplicidad y su uso de colores suaves y armoniosos la hacen aún más atractiva.</p>
-    </div>
-  </div>
-              <nav>
-                <ul style="padding: 10;">
-            <footer>
-              <div>
-                      <div>
-                        <a href="https://www.facebook.com">
-                          <img style="width: 30px;" src="imagenes/Facebook_Logo_(2019).png" alt="Facebook">
-                        </a>
-                        <a href="https://www.instagram.com">
-                          <img style="width: 30px;" src="imagenes/Instagram_logo_2022.svg.png" alt="Instagram">
-                        </a>
-                        <a href="https://www.twitter.com">
-                          <img style="width: 30px;" src="imagenes/3938028.png" alt="Twitter">
-                        </a>
-                      </div>
-              </footer>
-                  <div>
-                    <p style="color: bisque;">@ Derechos Reservados</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/escul.png" alt="Imagen ejemplo">
+          <p>La Estatua del Pensador es notable por su fuerza emocional y su habilidad para capturar <br>
+             la profundidad de la introspección y el pensamiento. <br>
+             La postura del hombre sugiere una tensión interna y un conflicto interno, mientras que <br>
+              su expresión facial sugiere una intensa concentración y reflexión.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/escultura.png" alt="Imagen ejemplo">
+          <p>Las estatuas representan la cabeza del legendario rey David de la antigua Grecia, <br>
+             y cada una ha sido tallada con un nivel de detalle asombroso. Cada rasgo facial, desde los ojos hasta <br>
+              los labios, ha sido cuidadosamente tallado para representar la perfección de la forma humana.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/forma.png" alt="Imagen ejemplo">
+          <p>Esta obra de arte es una interpretación única y abstracta de una pareja que baila tango. <br>
+             En lugar de representar a los bailarines con líneas <br>
+             y formas convencionales, el artista ha creado la imagen utilizando solo triángulos <br>
+              y formas similares, lo que le da a la pieza un aspecto geométrico y estilizado.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/galeria.png" alt="Imagen ejemplo">
+          <p>En esta galeria de arte, se estan exponiendo nuestras obras</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/hilo.png" alt="Imagen ejemplo">
+          <p>Esta mandala es una obra de arte fascinante y única, creada con hilos de distintos colores que <br> se
+             entrelazan en un patrón intrincado y bellamente diseñado. Cada hilo se ha seleccionado <br>
+              cuidadosamente para acentuar y complementar el color del hilo vecino, creando una imagen armoniosa y equilibrada.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/lana.png" alt="Imagen ejemplo">
+          <p>Esta obra de arte es una impresionante interpretación de una cabeza de caballo hecha con lana, que muestra una <br>
+             habilidad impresionante en la manipulación y el manejo de este material. <br>
+              Cada hebra de lana se ha tejido y trenzado cuidadosamente para crear una imagen de la cabeza de un caballo.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/mandala.png" alt="Imagen ejemplo">
+          <p>Esta mandala es una verdadera celebración del color y la forma. Los patrones y diseños intrincados se extienden <br>
+             desde el centro de la pieza, creando una sensación de movimiento y fluidez que lleva al ojo en un viaje emocionante y dinámico.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/thelastsupper.png" alt="Imagen ejemplo">
+          <p>La pintura muestra a los doce discípulos de Jesús sentados alrededor de una larga mesa, mientras que Jesús se encuentra en el centro, con los brazos abiertos. <br>
+             Los personajes están representados en un estilo realista y detallado, y cada uno tiene <br>
+              una expresión facial y un gesto que sugiere su personalidad y su papel en la historia.</p>
+        </div>
+        <div class="grid-item">
+          <img src="static/imagenes/tercera pagina/ojo.png" alt="Imagen ejemplo">
+          <p>Esta obra de arte es una impresionante representación de un ojo en tonos pastel, que se destaca por <br>
+             su textura única y distintiva. Aunque la obra no es muy detallada, su <br>
+              simplicidad y su uso de colores suaves y armoniosos la hacen aún más atractiva.</p>
+        </div>
+      </div>
+        <nav>
+          </div>
+          <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/escul.png" alt="Imagen ejemplo">
+                      <p>La Estatua del Pensador es notable por su fuerza emocional y su habilidad para capturar <br>
+                         la profundidad de la introspección y el pensamiento. <br>
+                         La postura del hombre sugiere una tensión interna y un conflicto interno, mientras que <br>
+                          su expresión facial sugiere una intensa concentración y reflexión.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/escultura.png" alt="Imagen ejemplo">
+                      <p>Las estatuas representan la cabeza del legendario rey David de la antigua Grecia, <br>
+                         y cada una ha sido tallada con un nivel de detalle asombroso. Cada rasgo facial, desde los ojos hasta <br>
+                          los labios, ha sido cuidadosamente tallado para representar la perfección de la forma humana.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/forma.png" alt="Imagen ejemplo">
+                      <p>Esta obra de arte es una interpretación única y abstracta de una pareja que baila tango. <br>
+                         En lugar de representar a los bailarines con líneas <br>
+                         y formas convencionales, el artista ha creado la imagen utilizando solo triángulos <br>
+                          y formas similares, lo que le da a la pieza un aspecto geométrico y estilizado.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/galeria.png" alt="Imagen ejemplo">
+                      <p>En esta galeria de arte, se estan exponiendo nuestras obras</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/hilo.png" alt="Imagen ejemplo">
+                      <p>Esta mandala es una obra de arte fascinante y única, creada con hilos de distintos colores que <br> se
+                         entrelazan en un patrón intrincado y bellamente diseñado. Cada hilo se ha seleccionado <br>
+                          cuidadosamente para acentuar y complementar el color del hilo vecino, creando una imagen armoniosa y equilibrada.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/lana.png" alt="Imagen ejemplo">
+                      <p>Esta obra de arte es una impresionante interpretación de una cabeza de caballo hecha con lana, que muestra una <br>
+                         habilidad impresionante en la manipulación y el manejo de este material. <br>
+                          Cada hebra de lana se ha tejido y trenzado cuidadosamente para crear una imagen de la cabeza de un caballo.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/mandala.png" alt="Imagen ejemplo">
+                      <p>Esta mandala es una verdadera celebración del color y la forma. Los patrones y diseños intrincados se extienden <br>
+                         desde el centro de la pieza, creando una sensación de movimiento y fluidez que lleva al ojo en un viaje emocionante y dinámico.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/thelastsupper.png" alt="Imagen ejemplo">
+                      <p>La pintura muestra a los doce discípulos de Jesús sentados alrededor de una larga mesa, mientras que Jesús se encuentra en el centro, con los brazos abiertos. <br>
+                         Los personajes están representados en un estilo realista y detallado, y cada uno tiene <br>
+                          una expresión facial y un gesto que sugiere su personalidad y su papel en la historia.</p>
+                    </div>
+                    <div class="grid-item">
+                      <img src="static/imagenes/tercera pagina/ojo.png" alt="Imagen ejemplo">
+                      <p>Esta obra de arte es una impresionante representación de un ojo en tonos pastel, que se destaca por <br>
+                         su textura única y distintiva. Aunque la obra no es muy detallada, su <br>
+                          simplicidad y su uso de colores suaves y armoniosos la hacen aún más atractiva.</p>
+                    </div>
                   </div>
-                </div>
-                </ul>
-                </nav>
+                              <nav>
+    <ul style="padding: 10px;">
+      <footer>
+        <div>
+          <div>
+            <a href="https://www.facebook.com">
+              <img style="width: 30px;" src="{% static 'imagenes/Facebook_Logo_(2019).png' %}" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com">
+              <img style="width: 30px;" src="{% static 'imagenes/Instagram_logo_2022.svg.png' %}" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com">
+              <img style="width: 30px;" src="{% static 'imagenes/3938028.png' %}" alt="Twitter">
+            </a>
+          </div>
+        </div>
+      </footer>
+      <div>
+        <p style="color: bisque;">@ Derechos Reservados</p>
+      </div>
+    </ul>
+  </nav>
 </body>
 </html>
