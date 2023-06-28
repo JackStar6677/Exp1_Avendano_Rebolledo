@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Cero</title>
+    <LInk rel="stylesheet" href="css/style.css">
+    <LInk rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <LInk rel="icon" href="imagenes/icono.png">
+        <style>
+            body {
+                background-color: bisque;
+                color: white;
+            }
+        </style>
+</head>
+<body>
+<!-- relleno automatico -->
+<script>
+    fetch('https://jsonplaceholder.typicode.com/users/1')
+    .then((respuesta) => {
+        return respuesta.json();
+    }).then((respuesta)=>{
+        document.getElementById('Nombres').value = respuesta.name;
+        document.getElementById('apaterno').value = respuesta.name;
+        document.getElementById('amaterno').value = respuesta.name;
+        document.getElementById('gender').value = ("MALE");
+        document.getElementById('rut').value = ("21.452.686-7");
+        document.getElementById('Direccion').value = respuesta.address.street;   
+        document.getElementById('Correo').value = respuesta.email;
+        document.getElementById('cell').value = respuesta.phone;
+    }) 
+    
+</script>
+
+<div class="container">
+    <form id="login-form">
+      <label for="Nombres">Nombres:</label><br>
+      <input type="text" name="Nombres" id="Nombres" maxlength="25" required><br>
+      <hr>
+      <label for="ApellidoPA">Apellido Paterno:</label><br>
+      <input type="text" name="ApellidoPA" id="apaterno" maxlength="25" required><br>
+      <hr>
+      <label for="ApellidoMa">Apellido Materno:</label><br>
+      <input type="text" name="ApellidoMa" id="amaterno" maxlength="25" required><br>
+      <hr>
+      <label for="Genero">Género:</label><br> 
+      <select name="Genero" id="gender">
+        <option value="">Seleccione una opcion</option>
+        <option value="M">Hombre</option>
+        <option value="F">Mujer</option>
+        <option value="O">Otro</option>
+      </select>
+      <hr>
+      <label for="rut">Rut:</label><br>
+      <input type="text" name="rut" id="rut" minlength="8" maxlength="12" pattern="[0-9]{1,2,3,4,5,6,7,8}[0-9Kk]" required><br>
+      <hr>
+      <label for="Direccion">Dirección:</label><br>
+      <input type="text" name="Direccion" id="Direccion" required><br>
+      <hr>
+      <label for="Correo">Correo Electrónico:</label><br>
+      <input type="email" name="Correo" id="Correo" required><br>
+      <hr>
+      <label for="Cell">Número de Teléfono:</label><br>
+      <input type="tel" name="Cell" id="cell" required><br>
+      <button type="button" onclick="validarFormulario()">Iniciar sesión</button>
+    </form>
+    <br>
+    <hr>
+  </div>
+  
+  <script src="js/login.js"></script>
+  
+<nav>
+  <ul style="padding: 1;">
+    <footer>
+        <div>
+          <div>
+              <a href="https://www.facebook.com">
+              <img style="width: 30px;" src="imagenes/Facebook_Logo_(2019).png" alt="Facebook">
+              </a>
+              <a href="https://www.instagram.com">
+              <img style="width: 30px;" src="imagenes/Instagram_logo_2022.svg.png" alt="Instagram">
+              </a>
+              <a href="https://www.twitter.com">
+              <img style="width: 30px;" src="imagenes/3938028.png" alt="Twitter">
+              </a>
+              </div>
+    </footer>
+            <div>
+              <p style="color: bisque;">@ Derechos Reservados</p>
+            </div>
+          </div>
+  </ul>
+</nav>
+</body>
+</html>
