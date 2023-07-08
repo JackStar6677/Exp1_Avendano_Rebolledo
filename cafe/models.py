@@ -9,3 +9,16 @@ class Producto(models.Model):
 
     def __str__(self):
         return str(self.nombre)
+
+class Usuario(models.Model):
+    nombres = models.CharField(max_length=25)
+    apellido_paterno = models.CharField(max_length=25)
+    apellido_materno = models.CharField(max_length=25)
+    genero = models.CharField(max_length=1, choices=[('M', 'Hombre'), ('F', 'Mujer'), ('O', 'Otro')])
+    rut = models.CharField(max_length=12, unique=True)
+    direccion = models.CharField(max_length=255)
+    correo = models.EmailField()
+    telefono = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.nombres
