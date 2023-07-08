@@ -41,7 +41,10 @@
             <a class="nav-item active" href="{% url 'Api' %}">Café</a>
           </li>
           <li>
-            <a class="nav-item active" href=logout>Cerrar sesión</a>
+            <a class="nav-item active" href="{% url 'login' %}">Cerrar sesión</a>
+          </li>
+          <li>
+            <a class="nav-item active" href="{%url 'carrito' %}">Carrito de Compras</a>
           </li>
         </ul>
       </div>
