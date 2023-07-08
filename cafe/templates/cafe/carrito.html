@@ -1,0 +1,197 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Café</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link rel="icon" href="{% static 'imagenes/icono.png' %}">
+    <style>
+      body {
+        background-color: bisque;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li>
+            <img src="{% static 'imagenes/logofinal.png' %}" alt="" style="height: 90;">
+          </li>
+          <li class="nav-item">
+            <a class="nav-item active" href="{% url 'index' %}"> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item active" href="{% url 'pagina2' %}"> Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item active" href="{% url 'pagina3' %}" > Galería</a>
+          </li>
+          <li>
+            <a class="nav-item active" href="{% url 'Api' %}">Café</a>
+          </li>
+          <li>
+            <a class="nav-item active" href="{% url 'login' %}">Cerrar sesión</a>
+          </li>
+          <li>
+            <a class="nav-item active" href="{%url 'carrito' %}">Carrito de Compras</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+  <div class="container">
+    <h1>Carrito de Compras</h1>
+    <div class="cafe-options">
+      <h2>Tipos de Café</h2>
+      <select name="cafe" id="cafe">
+        <option value="Mocca">Mocca</option>
+        <option value="Irish">Irish</option>
+        <option value="Latte">Latte</option>
+        <option value="Expresso">Expresso</option>
+        <option value="Americano">Americano</option>
+        <option value="Cappuccino">Cappuccino</option>
+        <option value="Bombon">Bombon</option>
+        <option value="Café con Leche">Café con Leche</option>
+        <option value="Frappe">Frappe</option>
+        <option value="Azteca">Azteca</option>
+      </select>
+    </div>
+    <div class="comida-options">
+      <h2>Comida</h2>
+      <select name="comida" id="comida" multiple>
+        <option value="Cuernitos">Cuernitos</option>
+        <option value="Chapata">Chapata</option>
+        <option value="Ensaladas">Ensaladas</option>
+        <option value="Quiche">Quiche</option>
+        <option value="Focaccia de pollo">Focaccia de pollo</option>
+        <option value="Molletes">Molletes</option>
+        <option value="Baguette">Baguette</option>
+        <option value="Cursos de snacks salados">Cursos de snacks salados</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" type="button" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+  </div>
+
+  <div id="carrito" class="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="items-carrito"></ul>
+  </div>
+  
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Total del Carrito</h2>
+      <p id="total"></p>
+      <button class="btn btn-primary" onclick="realizarPago()">Pagar</button>
+    </div>
+  </div>
+
+  <script>
+    function agregarAlCarrito() {
+      var tipoCafe = document.getElementById("cafe").value;
+      var comidas = document.getElementById("comida").selectedOptions;
+  
+      if (comidas.length === 0) {
+        alert("Por favor, seleccione al menos una comida");
+        return;
+      }
+  
+      var carrito = document.getElementById("items-carrito");
+  
+      var listaComidas = "";
+      for (var i = 0; i < comidas.length; i++) {
+        listaComidas += comidas[i].value + "<br>";
+      }
+  
+      var itemCarrito = document.createElement("li");
+      itemCarrito.innerHTML =
+        "<strong>Tipo de Café:</strong> " +
+        tipoCafe +
+        "<br><strong>Comidas:</strong> " +
+        listaComidas;
+  
+      var deleteButton = document.createElement("button");
+      deleteButton.innerHTML = "Eliminar";
+      deleteButton.className = "btn btn-danger";
+      deleteButton.onclick = function () {
+        carrito.removeChild(itemCarrito);
+        calcularTotal();
+      };
+  
+      itemCarrito.appendChild(deleteButton);
+      carrito.appendChild(itemCarrito);
+  
+      calcularTotal();
+    }
+  
+    function calcularTotal() {
+      var items = document.querySelectorAll("#items-carrito li");
+  
+      var total = 0;
+      for (var i = 0; i < items.length; i++) {
+        total += 10; // Precio ficticio de cada ítem
+      }
+  
+      document.getElementById("total").innerHTML = "Total: $" + total.toFixed(2);
+      mostrarModal();
+    }
+  
+    function mostrarModal() {
+      var modal = document.getElementById("modal");
+      var closeButton = document.getElementsByClassName("close")[0];
+  
+      modal.style.display = "block";
+  
+      closeButton.onclick = function () {
+        modal.style.display = "none";
+      };
+  
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    }
+  
+    function realizarPago() {
+      alert("Funcionalidad de pago no implementada");
+    }
+  </script>
+  
+  
+  <nav>
+    <ul style="padding: 10;">
+      <footer>
+        <div>
+          <div>
+            <a href="https://www.facebook.com">
+              <img style="width: 30px;" src="{% static 'imagenes/Facebook_Logo_(2019).png' %}" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com">
+                <img style="width: 30px;" src="{% static 'imagenes/Instagram_logo_2022.svg.png' %}" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com">
+              <img style="width: 30px;" src="{% static 'imagenes/3938028.png' %}" alt="Twitter">
+            </a>
+          </div>
+        </footer>
+        <div>
+          <p style="color: bisque;">@ Derechos Reservados</p>
+        </div>
+      </div>
+      </ul>
+    </nav>
+  </body>
+  </html>
