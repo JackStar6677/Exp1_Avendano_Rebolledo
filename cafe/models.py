@@ -22,3 +22,13 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombres
+
+from django.db import models
+
+class MiModelo(models.Model):
+    campo1 = models.CharField(max_length=100)
+    campo2 = models.IntegerField()
+    campo3 = models.DateTimeField()
+
+    def __str__(self):
+        return self.campo1
