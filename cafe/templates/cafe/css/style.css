@@ -115,7 +115,6 @@ input[type="button"] {
   grid-gap: 44px;
 }
 
-/* Acá esta la caga en las dos imagenes del index AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 
 .item {
   border: 1px solid #ccc;
@@ -131,3 +130,62 @@ input[type="button"] {
 .grideses img {
   max-width: 100%;
 }
+
+body {
+  background-color: bisque;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #563F1B;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.products {
+  flex: 2;
+}
+
+.cart {
+  flex: 1;
+  background-color: #8B572A;
+  padding: 20px;
+}
+
+footer {
+  background-color: #563F1B;
+  padding: 10px;
+  text-align: center;
+}
+<style>
+  .carrito {
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .carrito h2 {
+    margin-bottom: 10px;
+  }
+
+  .carrito ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .carrito li {
+    margin-bottom: 5px;
+  }
+</style>
