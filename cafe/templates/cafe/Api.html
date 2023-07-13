@@ -1,6 +1,5 @@
 {% load static %}
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,8 +17,9 @@
     </style>
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+        <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,24 +29,29 @@
             <img src="{% static 'imagenes/logofinal.png' %}" alt="" style="height: 90;">
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+            <a class="nav-item active" href="{% url 'index' %}"> Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'pagina2' %}">Sobre Nosotros</a>
+            <a class="nav-item active" href="{% url 'pagina2' %}"> Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'pagina3' %}">Galería</a>
+            <a class="nav-item active" href="{% url 'pagina3' %}" > Galería</a>
           </li>
           <li>
-            <a class="nav-link active" href="{% url 'Api' %}">Café</a>
+            <a class="nav-item active" href="{% url 'Api' %}">Café</a>
           </li>
           <li>
-            <a class="nav-link active" href="{% url 'login' %}">Cerrar Sesión</a>
+            <a class="nav-item active" href="{%url 'carrito' %}">Carrito de Compras</a>
+          </li>
+          <li>
+            <a class="nav-item active" href="{% url 'login' %}">Cerrar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
+    
   <h1 style="text-align: center;">También tenemos un pequeño café en el que ofrecemos desayunos y café</h1>
   <style>
     /* Estilos para el contenedor de las imágenes */
@@ -120,22 +125,28 @@
   </script>
 
   <footer>
+    <nav>
+      <ul style="padding: 10;">
+  <footer>
     <div>
-      <div>
-        <a href="https://www.facebook.com">
-          <img style="width: 30px;" src="{% static 'imagenes/Facebook_Logo_(2019).png' %}" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com">
-          <img style="width: 30px;" src="{% static 'imagenes/Instagram_logo_2022.svg.png' %}" alt="Instagram">
-        </a>
-        <a href="https://www.twitter.com">
-          <img style="width: 30px;" src="{% static 'imagenes/3938028.png' %}" alt="Twitter">
-        </a>
+            <div>
+              <a href="https://www.facebook.com">
+                <img style="width: 30px;" src="{% static 'imagenes/Facebook_Logo_(2019).png' %}" alt="Facebook">
+              </a>
+              <a href="https://www.instagram.com">
+                <img style="width: 30px;" src="{% static 'imagenes/Instagram_logo_2022.svg.png' %}" alt="Instagram">
+              </a>
+              <a href="https://www.twitter.com">
+                <img style="width: 30px;" src="{% static 'imagenes/3938028.png' %}" alt="Twitter">
+              </a>
+            </div>
+    </footer>
+        <div>
+          <p style="color: bisque;">@ Derechos Reservados</p>
+        </div>
       </div>
-    </div>
-    <div>
-      <p style="color: bisque;">@ Derechos Reservados</p>
-    </div>
-  </footer>
+      </ul>
+      </nav>
 </body>
 </html>
+
