@@ -15,6 +15,9 @@ def pagina2(request):
 def pagina3(request):
     return render(request, 'cafe/pagina3.html')
 
+def carrito(request):
+    return render(request, 'cafe/carrito.html')
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ProductoForm
 from .models import Producto
