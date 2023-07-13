@@ -19,33 +19,36 @@
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li>
-            <img src="{% static 'imagenes/logofinal.png' %}" alt="" style="height: 90px;">
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'pagina2' %}">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'pagina3' %}">Galería</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'Api' %}">Café</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'login' %}">Cerrar sesión</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li>
+        <img src="{% static 'imagenes/logofinal.png' %}" alt="" style="height: 90;">
+      </li>
+      <li class="nav-item">
+        <a class="nav-item active" href="{% url 'index' %}"> Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-item active" href="{% url 'pagina2' %}"> Sobre Nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-item active" href="{% url 'pagina3' %}" > Galería</a>
+      </li>
+      <li>
+        <a class="nav-item active" href="{% url 'Api' %}">Café</a>
+      </li>
+      <li>
+        <a class="nav-item active" href="{%url 'carrito' %}">Carrito de Compras</a>
+      </li>
+      <li>
+        <a class="nav-item active" href="{% url 'login' %}">Cerrar sesión</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
 
   <h1>Imágenes y descripciones</h1>
 
